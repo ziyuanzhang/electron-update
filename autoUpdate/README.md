@@ -1,14 +1,17 @@
+## package.json 配置说明
+
+```
 "build": { // 这里是 electron-builder 的配置
 "productName":"xxxx",//项目名 这也是生成的 exe 文件的前缀名
-"appId": "com.xxx.xxxxx",//包名  
+"appId": "com.xxx.xxxxx",//包名
  "copyright":"xxxx",//版权 信息
 "directories": { // 输出文件夹
 "output": "build"
 },
 // windows 相关的配置
-"win": {  
+"win": {
  "icon": "xxx/icon.ico"//图标路径
-}  
+}
  }
 
 "nsis": {
@@ -22,5 +25,6 @@
 "createStartMenuShortcut": true,// 创建开始菜单图标
 "shortcutName": "xxxx", // 图标名称
 "include": "build/script/installer.nsh", // 包含的自定义 nsis 脚本 这个对于构建需求严格得安装过程相当有用。
-"script" : "build/script/installer.nsh" // NSIS 脚本的路径，用于自定义安装程序。 默认为 build / installer.nsi  
+"script" : "build/script/installer.nsh" // NSIS 脚本的路径，用于自定义安装程序。 默认为 build / installer.nsi
 },
+```

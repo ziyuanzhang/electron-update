@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+</head>
+
+<body>
+    <h1>Hello World!3</h1>
+    <p>
+        We are using node
+        <script>document.write(process.versions.node)</script>,
+    </p>
+    <p>Chrome
+        <script>document.write(process.versions.chrome)</script>,
+    </p>
+    <p>
+        and Electron
+        <script>document.write(process.versions.electron)</script>.
+    </p>
+    <div id="tip">1111</div>
+    <button id="btn">更新</button>
+
+    <script>
+        if (window.require) {
+            console.error('------开始检查更新------')
+            var ipcRenderer = window.require('electron').ipcRenderer;
+            document.querySelector("#btn").addEventListener("click", function () {
+                ipcRenderer.send('checkForUpdate')
+            })
+            ipcRenderer.on('message', (event, text) => {
+                console.log('返回消息', text)
+                //console.log('---->', event)
+            })
+            ipcRenderer.on('updating', (event, text) => {
+                document.querySelector("#tip").innerHTML = text;
+            })
+
+        }
+
+    </script>
+
+</body>
+
+</html>

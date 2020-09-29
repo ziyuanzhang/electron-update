@@ -1,0 +1,36 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Administrator\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add electron-builder --dev
+
+PATH: 
+  D:\Program Files (x86)\NetSarang\Xshell 6\;D:\Java\jdk1.8.0_171\bin;D:\Java\jdk1.8.0_171\jre\bin;C:\Program Files\nodejs;c:\windows\system32;D:\python\Scripts;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Users\Administrator\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Windows PowerShell\;C:\windows\system32\WindowsPowerShell\v1.0;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\windows;C:\windows\system32\wbem;D:\python\Scripts\;D:\Python27\;C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Program Files\nodejs;C:\Program Files\Git\bin;D:\Program Files\Microsoft VS Code\bin;C:\Users\Administrator\AppData\Roaming\npm;d:\Users\Administrator\AppData\Local\Programs\Fiddler;D:\Program Files (x86)\Fiddler;D:\Gradle\gradle-5.3-rc-3\bin;C:\windows\system32\WindowsPowerShell\v1.0;C:\Users\Administrator\AppData\Local\BypassRuntm
+
+Yarn version: 
+  1.15.2
+
+Node version: 
+  10.15.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\Administrator\AppData\Local\Yarn\Cache\v4\npm-ansi-regex-2.1.1-c3b33ab5ee360d86e0e628f0468ae7ef27d654df\node_modules\ansi-regex\index.js' -> 'E:\test\electron\autoUpdate\node_modules\single-line-log\node_modules\ansi-regex\index.js'
+
+npm manifest: 
+  {
+    "name": "your-app",
+    "version": "0.1.0",
+    "main": "main.js",
+    "scripts": {
+      "start": "electron ."
+    },
+    "devDependencies": {
+      "electron": "^6.0.10"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

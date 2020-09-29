@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test-electron-autoUpdate</title>
+</head>
+
+<body>
+    ahdsfjash
+
+    <label>更新提示2：<span id="tip"></span></label>
+    <label>进度：<span id="downloadProgress"></span></label>
+    <button id="btn">点击</button>
+
+    <script>
+
+        if (window.require) {
+            console.error('------开始检查更新------')
+            var ipcRenderer = window.require('electron').ipcRenderer
+
+            document.querySelector("#btn").addEventListener("click", function () {
+                ipcRenderer.send('checkForUpdate')
+            })
+
+            ipcRenderer.on('message', (event, text) => {
+                console.log('---->', event)
+                console.log('返回消息', text)
+
+                document.querySelector("#tip").innerHTML = text;
+
+            })
+
+            ipcRenderer.on('downloadProgress', (event, progressObj) => {
+                console.log('下载', progressObj)
+                //this.progress = progressObj.percent
+                document.querySelector("#downloadProgress").innerHTML = progressObj.percent || 0;
+            })
+            ipcRenderer.on('isUpdateNow', () => {
+                console.log('是否现在更新')
+                ipcRenderer.send('UpdateNow')
+            })
+        }
+    </script>
+</body>
+
+</html>
